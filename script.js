@@ -130,6 +130,10 @@ function editRecord(record, dataDiv) {
 
     isEditing = true;
     deleteRecord(record, dataDiv);
+    setTimeout(() => {
+        alert("Selected record is ready for editing.");
+    }, 10);
+
     stSubmit.addEventListener("click", () => {
         e.preventDefault();
         addRecord();

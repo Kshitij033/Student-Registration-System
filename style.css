@@ -120,6 +120,12 @@ input {
     padding: 10px;
     border-bottom: 1px solid white;
 }
+
+.ed, 
+.del{
+    padding-left: 10px;
+}
+
 .records{
     height: calc(68vh - 10vh); 
     overflow-y: scroll;
