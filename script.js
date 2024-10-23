@@ -112,7 +112,7 @@ function clearInputs() {
 
 function deleteRecord(record, dataDiv) {
     let records = JSON.parse(localStorage.getItem("studentRecords")) || [];
-    records = records.filter(r => r.id !== record.id); // Assuming 'id' is unique
+    records = records.filter(r => r.id !== record.id); 
     localStorage.setItem("studentRecords", JSON.stringify(records));
     stRecords.removeChild(dataDiv);
 }
@@ -134,9 +134,9 @@ function editRecord(record, dataDiv) {
         alert("Selected record is ready for editing.");
     }, 10);
 
-    stSubmit.addEventListener("click", () => {
+    stSubmit.addEventListener("click", function editSubmit(e) {
         e.preventDefault();
         addRecord();
-        })
-        stSubmit.removeEventListener("click", saveEditedRecord);
+        stSubmit.removeEventListener("click", editSubmit);
+    });
 }
