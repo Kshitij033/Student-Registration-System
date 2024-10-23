@@ -118,10 +118,12 @@ function deleteRecord(record, dataDiv) {
 }
 
 function editRecord(record, dataDiv) {
+
     if (isEditing) {
         alert("Finish editing the current details first!");
         return;
     }
+
     stName.value = record.name;
     stId.value = record.id;
     stClass.value = record.studentClass;
@@ -134,9 +136,4 @@ function editRecord(record, dataDiv) {
         alert("Selected record is ready for editing.");
     }, 10);
 
-    stSubmit.addEventListener("click", function editSubmit(e) {
-        e.preventDefault();
-        addRecord();
-        stSubmit.removeEventListener("click", editSubmit);
-    });
 }
